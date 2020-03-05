@@ -1,0 +1,96 @@
+/* Program to implement Recursive Binary search and Linear search and determine the time required to search the element.Repeat teh same for 
+'N' values and plot the graph of the time taken versus N*/
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+
+int Linear_Search(int A[],int l,int r,int key)
+{
+   if(r<l)
+    return -1;
+   if(A[i]==key)
+    return l;
+   if(A[r]==key)
+    return r;
+   return Linear_Search(A,l+1,r-1,key);;
+}
+
+int Binary_Search(int A[],int l,int r,int key)
+{
+  if(r>=1)
+  {
+      int mid=l+(r-1)/2;
+      if(A[mid]==key)
+        return mid;
+      if(A[mid]>key)
+        return Binary_Search(A,l,mid-1,key);
+      return Binary_search(A,mid+1,r,key);
+  }
+  return -1;
+}
+
+int main()
+{
+  int A[30],k;
+  int n,i;
+  int choice;
+  clock_t start,end;
+  double time_required;
+  printf("\nThe choices are:\n
+  1.Linear search\n
+  2.Binary Search\n
+  Enter your choice:");
+  scanf("%d",&choice);
+  switch(choice)
+  {
+      case 1: printf("Enter the size of an array:");
+              scanf("%d",&n);
+              printf("Enter the %d elements",n);
+              for(i=0;i<n;i++)
+                scanf(%d",&a[i]);
+              printf("Enter the key to be searched :");
+              scanf("%d",&k);
+              start=clock();
+              int flag=Linear_Search(A,0,n-1,k);
+              end=clock();
+              time_required=((double)(end-start))/CLOCKS_PER_SECONDS;
+              if(flag!=-1)
+              {
+                printf("\nElement %d found at A[%d] index",k,flag);
+                printf("\nThe time required to search the %d elements is %f\n",k,time_required);
+              }
+              else
+              {
+                printf("\nElment %d is Not Found",k);
+              }
+              break;
+              
+     case 2:  printf("Enter the size of an array:");
+              scanf("%d",&n);
+              printf("Enter the %d elements",n);
+              for(i=0;i<n;i++)
+                scanf(%d",&a[i]);
+              printf("Enter the key to be searched :");
+              scanf("%d",&k);
+              start=clock();
+              int flag=Binary_Search(A,0,n-1,k);
+              end=clock();
+              time_required=((double)(end-start))/CLOCKS_PER_SECONDS;
+              if(flag!=-1)
+              {
+                printf("\nElement %d found at A[%d] index",k,flag);
+                printf("\nThe time required to search the %d elements is %f\n",k,time_required);
+              }
+              else
+              {
+                printf("\nElment %d is Not Found",k);
+              }
+              break;
+    default:printf(\nInvalid Choice...!");
+            exit(0);
+   }
+    return 0;
+}
+  
+  
+
