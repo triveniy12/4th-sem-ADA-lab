@@ -1,4 +1,4 @@
-##include<stdio.h>
+#include<stdio.h>
 int minKey(int key[], int mstSet[],int n) 
 { 
     int min = 100, min_index; 
