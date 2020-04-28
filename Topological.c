@@ -1,6 +1,7 @@
 #include <stdio.h>
 	 
-	int main(){
+int main()
+{
 		int i,j,k,n,a[10][10],indeg[10],flag[10],count=0;
 	 
 		printf("Enter the no of vertices:\n");
